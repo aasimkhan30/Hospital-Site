@@ -1,0 +1,253 @@
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <title>Patient Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body background="img/background.png">
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/patlog.js"></script>
+<style>
+
+</style>
+<!--
+<ul id="slide-out" class="side-nav">
+<li><div class="userView">
+<img class="background" src=" ">
+  <i class="large material-icons" >perm_identity</i>
+     <a href="#!user"><img class="circle" src=""></a>
+<a href="#!name"><span class="white-text name">John Doe</span></a>
+<a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+</div></li>
+<li><a href="#!"><i class="material-icons">library_add</i>Create activity</a></li>
+<li><a href="#!">Second Link</a></li>
+<li><div class="divider"></div></li>
+<li><a class="subheader">Subheader</a></li>
+<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+</ul>
+<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>-->
+<div class="navbar-fixed">
+    <nav class=" teal lighten-1">
+        <div class="nav-wrapper     ">
+            <a href="#" data-activates="mobile-demo" class="button-collapse " style="margin-left:10px;z-index:0;"><i class="material-icons">menu</i></a>
+            <a href="index.html" class="brand-logo hide-on-med-and-down" style="margin-left:20px;"><img class="todo-shrink-navlogo" height="75px" width="75px" src="img/legacy-hospital-logo.jpg"></a>
+            <!--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          -->
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a href="sass.html"></a>
+                </li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="ns.html">Newsletters</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a class="waves-effect waves-light btn amber accent-4" onclick="logout()">Logout</a></li>
+            </ul>
+            <ul class=" side-nav fixed " id="mobile-demo" style="background:#fff;margin-top: 65px;">
+                <li>
+                    <div class="userView">
+                        <img class="background" src=" img/sidenav.png">
+                        <a style="margin-top:50px;" class="subheader"><span class="white-text name" id="username">Name: Loading</span></a>
+                        <a><span class="white-text email subheader" id="email">Email: Loading</span></a>
+                        <a><span class="white-text email subheader" id="phone">Phone: 9769130142</span></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+                <li><a class="subheader">Details</a></li>
+                <li><a class="subheader"><span id="blood">Blood Group:</span></a></li>
+                <li><a class="subheader"><span id="dob">Date of Birth:</span></a></li>
+                <li><a class="subheader"><span id="country">Country:</span></a></li>
+            </ul>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="row">
+    <div class=" col s12 m12 l9 offset-l3">
+        <div class="card">
+
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+                        <li class="tab col s3"><a  class="active"  href="#test1">Book An Appointment</a></li>
+                        <li class="tab col s3"><a href="#test2">View And Cancel Appointments</a></li>
+                        <li class="tab col s3"><a href="#test3">Download Lab Reports</a></li>
+                    </ul>
+                </div>
+                <div id="test1" class="col s12">
+                    <div class="card  grey lighten-5">
+                        <div class="card-content">
+                            <span class="card-title">Book Appointment</span>
+                            <div class="red white-text center-align" style="padding:10px; margin-bottom:5px;" id="erroapp">
+                                <h5>Sorry Time Slot Already Booked Please Select Another Time</h5>
+                            </div>
+                            <div class="green white-text center-align" style="padding:10px ; margin-bottom:5px;" id="doneapp">
+                                <h5>Appointment Booked</h5>
+                            </div>
+                            <p>SPECIALTY</p>
+                            <select id="speciality" onchange="onchangesp()">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="Bariatic Surgery">Bariatic Surgery</option>
+                                <option value="IVF">IVF</option>
+                                <option value="Nephrology">Nephrology</option>
+                                <option value="Gynecology">Gynecology</option>
+                                <option value="Oncology">Oncology</option>
+                                <option value="Ophthamology">Ophthamology</option>
+                            </select>
+                            <p>DOCTOR</p>
+                            <select id="doctorlist" onchange="onchangedoctors()">
+                                <option value="" disabled selected>Choose your option</option>
+                            </select>
+                            <p>DATE</p>
+                            <input type="date" id="date" class="datepicker">
+                            <p>HOURS</p>
+                            <select id="hours">
+                                <option value="" disabled selected>Choose your option</option>
+                            </select>
+                            <p>MINUTES</p>
+                            <select id="mins">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="00">00</option>
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="40">40</option>
+                                <option value="50">50</option>
+                            </select>
+                            <BR>
+                            <a class="btn  amber accent-4" onclick="createAppointment()">Book Appointment</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="test2" class="col s12">
+                    <div class="card grey lighten-5">
+                        <div class="card-content ">
+                            <span class="card-title">Appointments List</span>
+                            <table id="patappoint">
+                                <thead>
+                                <tr>
+                                    <th data-field="doc">Doctor</th>
+                                    <th data-field="spec">Specialty</th>
+                                    <th data-field="date">Date</th>
+                                    <th data-field="id">Cancel</th>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="test3" class="col s12">
+                    <div class="card grey lighten-5">
+                        <div class="card-content ">
+                            <span class="card-title">LAB REPORTS</span>
+                            <table id="reports">
+                                <thead>
+                                <tr>
+                                    <th data-field="id">REPORT</th>
+                                    <th data-field="price">Date</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 m12 l9 offset-l3">
+
+    </div>
+</div>
+<div class="row">
+
+
+</div>
+<div class="fixed-action-btn " style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large  red" href="ambulance.html">
+        <i class="material-icons">&#xE548;</i>
+    </a>
+</div>
+
+<div class="preloader-wrapper big active" id="contentload" style="position: fixed;top:50%;left: 50%">
+    <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+            <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+            <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+    </div>
+</div>
+<footer class="page-footer teal lighten-1 fixed">
+    <div class="row">
+        <div class="col s12 m12 l10 offset-l2">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">WHO WE ARE</h5>
+                        <div class="divider"></div>
+                        <p class="grey-text text-lighten-4">Hospital, founded in honour of the legend, Padma Bhushan Dr Harshul Sharad Jadhav, came into existence in February 2004. The challenge of the early days was enormous, to foster the fledgling hospital into an enduring symbol of healthcare in the country. We recognised early on that to make a real and substantial contribution one had to redefine the standards themselves- instead of doing more of the same.</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Links</h5>
+                        <div class="divider"></div>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!">Facilities</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">News</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Media</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    &copy; 2016 SPIT
+                    <a class="grey-text text-lighten-4 right" href="#!">Terms And Conditions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+        $('.slider').slider({
+            full_width: true,
+            interval: 5000,
+            height: 600,
+            transition: 800
+        });
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15 // Creates a dropdown of 15 years to control year
+        });
+
+    });
+    $('#patients_voice').carousel({
+        full_width: true,
+        indicators: true
+    });
+</script>
+
+</html>

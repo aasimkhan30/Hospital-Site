@@ -1,0 +1,21 @@
+<html>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>
+function onloads(){
+  $.ajax({
+              type:"POST",
+              url:"http://localhost:8080/users/loginUser",
+              dataType:"json",
+              data:{
+                "name":"aasim",
+                "password":"2"
+              },
+              success:function(data){
+                console.log("Hekl");
+                alert(data.success);
+}});
+}
+</script>
+<body onload="onloads()">
+</body>
+</html>

@@ -1,0 +1,84 @@
+         .input-field input[type=search] {
+            height: inherit;
+        }
+        #map{
+            display: block;
+            position:absolute;
+            height:auto;
+            bottom:0;
+            top:10px;
+            z-index: -1;
+            left:0;
+            right:0;
+            margin-top:50px; /* adjust top margin to your header height */
+        }
+
+        #map .centerMarker{
+  position:absolute;
+  /*url of the marker*/
+  background:url(../img/pointer.png) no-repeat;
+  /*center the marker*/
+  top:50%;left:50%;
+  z-index:1;
+  /*fix offset when needed*/
+  margin-left:-10px;
+  margin-top:-34px;
+  /*size of the image*/
+  height:34px;
+  width:20px;
+  cursor:pointer;
+   background-size: 100%;
+}
+
+  #map .flyMarker{
+  position:absolute;
+  /*url of the marker*/
+  background:url(../img/flymarker.png) no-repeat;
+  /*center the marker*/
+  top:calc(50% - 34px);left:calc(50% - 140px);
+  z-index:1;
+  /*fix offset when needed*/
+  margin-left:-10px;
+  margin-top:-34px;
+  /*size of the image*/
+  height:50px;
+  width:300px;
+  cursor:pointer;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  line-height: 50px;
+   background-size:cover;
+}
+
+.aParent div {
+  float: left;
+  clear: none; 
+}
+
+#search{
+    /* text-overflow: ellipsis;*/
+}
+
+#call{
+}
+.toast{
+ background: #fea01b;
+}
+        ::-webkit-input-placeholder {
+            color: #fff;
+        }
+
+        :-moz-placeholder { /* Firefox 18- */
+             color: #fff;  
+        }
+
+        ::-moz-placeholder {  /* Firefox 19+ */
+             color: #fff;  
+        }
+
+        :-ms-input-placeholder {  
+            color: #fff;  
+        }
+
+       

@@ -1,0 +1,122 @@
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <TITLE>Hospital | Register</TITLE>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+<style>
+
+</style>
+
+<body>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/pathdash.js"></script>
+<!-- JS file -->
+<script src="js/jquery.easy-autocomplete.min.js"></script>
+
+<!-- CSS file -->
+<link rel="stylesheet" href="css/easy-autocomplete.min.css">
+
+<!-- Additional CSS Themes file - not required-->
+<link rel="stylesheet" href="css/easy-autocomplete.themes.min.css">
+<!-- Navabar -->
+<!-- Dropdown Structure -->
+
+<nav>
+    <div class="nav-wrapper    light-blue darken-3">
+        <a href="index.html" class="brand-logo" style="margin-left:20px;">Hospital</a>
+        <li><a href="pathlog.html" style="float:right;padding-right: 5em;" onclick="logout()">Logout</a></li>
+    </div>
+</nav>
+
+<div class="row " style="margin-top:20px;">
+    <div class="col s12  m7 offset-m3   ">
+        <div class="card-panel" style="">
+            <h4 style="width:100%;  text-align: center;"> Add Report</h4>
+            <div class="row">
+                <br>
+
+                    <div class="row">
+                        <div class="row">
+                            <h5>Report Name</h5>
+                        </div>
+
+
+                            <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="reportid" type="text" name="reportid" class="validate">
+                                <label for="reportid"> Report Id</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                           <h5>Patient Email</h5>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s10">
+                                <input id="patientid" name="patient" type="text"><br>
+                            </div>
+                        </div>-->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="file" id="reportpdf" name="reportpdf" accept=".pdf">
+                            </div>
+
+
+                        <br>
+                        <button type="submit"  onclick="uploadFile()" class="waves-effect waves-light btn orange darken-2" style="width:100%" > Submit</button>
+                        <br>
+                        <br>
+                            </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</form>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer class="page-footer light-blue darken-3">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">WHO WE ARE</h5>
+                <div class="divider"></div>
+                <p class="grey-text text-lighten-4">Hospital, founded in honour of the legend, Padma Bhushan Dr Harshul Jadhav, came into existence in February 2004. The challenge of the early days was enormous, to foster the fledgling hospital into an enduring symbol of healthcare in the country. We recognised early on that to make a real and substantial contribution one had to redefine the standards themselves- instead of doing more of the same.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <div class="divider"></div>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Facilities</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">News</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Media</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            &copy; 2016 SPIT
+            <a class="grey-text text-lighten-4 right" href="#!">Terms And Conditions</a>
+        </div>
+    </div>
+</footer>
+</body>

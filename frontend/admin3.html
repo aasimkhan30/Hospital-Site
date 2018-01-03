@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<style>
+    h3,
+    h5 {
+        padding: 20px 0 0 20px;
+    }
+</style>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="css/admin.css" />
+</head>
+
+<body>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/admin.js"></script>
+
+<!-- Navabar -->
+<nav>
+    <div class="nav-wrapper light-blue darken-3 white-text">
+        <a href="admin1.html" class="brand-logo" style="margin-left: 20px;">Hospital Admin</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="admin1.html">Doctors</a></li>
+            <li><a href="admin2.html">Appointments</a></li>
+            <li><a href="admin3.html">Emergency</a></li>
+            <li><a href="adminlogin.html">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+<div class="card">
+    <div class="card-content">
+    <div class="row">
+        <div class="col s6"><h3>Emergency Healthcabs</h3></div>
+        <div class="col s6 right-align"> <a class="waves-effect waves-light btn-large red" onclick="addambu()">Add Ambulance</a></div>
+    </div>
+    <div id="viewambulance">
+
+    </div>
+    </div>
+</div>
+</div>
+<footer class="page-footer light-blue darken-3">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">WHO WE ARE</h5>
+                <div class="divider"></div>
+                <p class="grey-text text-lighten-4">Hospital, founded in honour of the legend, Padma Bhushan Dr Harshul Jadhav, came into existence in February 2004. The challenge of the early days was enormous, to foster the fledgling hospital into an enduring symbol of healthcare in the country. We recognised early on that to make a real and substantial contribution one had to redefine the standards themselves- instead of doing more of the same.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <div class="divider"></div>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Facilities</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">News</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Media</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            &copy; 2016 SPIT
+            <a class="grey-text text-lighten-4 right" href="#!">Terms And Conditions</a>
+        </div>
+    </div>
+</footer>
+<script src="http://cdn.pubnub.com/pubnub-3.16.4.min.js"></script>
+</body>
+
+</html>

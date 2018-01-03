@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<style>
+    div.cent{
+        width: 80%;
+        margin: auto;
+    }
+    div.butto{
+        float: right;
+        padding: 0 15px 0 0;
+    }
+</style>
+<html>
+<head>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link type="text/css" rel="stylesheet" href="css/admin.css"/>
+
+</head>
+
+<body background="img/background.png">
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.0.11.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src = "js/admin.js"></script>
+
+<nav>
+    <div class="nav-wrapper light-blue darken-3 white-text">
+        <a href="#" class="brand-logo" style="margin-left: 20px;">Hospital Admin</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="admin1.html">Doctors</a></li>
+            <li><a href="admin2.html">Appointments</a></li>
+            <li><a href="admin3.html">Emergency</a></li>
+            <li><a onclick="logout()">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="card" style="margin-top: 40px;">
+<div class="card-content"  >
+<div class="row">
+    <div class="col s12">
+        <ul class="tabs">
+            <li class="tab col s3"><a class="active" href="#test1">View Doctor</a></li>
+            <li class="tab col s3"><a  href="#test2">Add Dcotor</a></li>
+        </ul>
+    </div>
+     <div id="test1" class="col s12">
+
+
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="name" type="text" class="validate" required>
+                <label for="name">Name</label>
+            </div>
+            <div class="input-field col s6">
+                <select id="gender">
+                    <option value="" disabled selected required>Choose your option</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <label for="gender">Gender</label>
+            </div>
+        </div>
+         <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">work</i>
+                        <select id="speciality">
+                            <option value="" disabled selected required>Choose your option</option>
+                            <option value="Bariatic Surgery">Bariatic Surgery</option>
+                            <option value="IVF">IVF</option>
+                            <option value="Nephrology">Nephrology</option>
+                            <option value="Gynecology">Gynecology</option>
+                            <option value="Oncology">Oncology</option>
+                            <option value="Ophthamology">Ophthamology</option>
+                        </select>
+                <label for="speciality">Speciality</label>
+            </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">description</i>
+                <input id="degree" type="text" class="validate" required>
+                <label for="degree">Qualifications (eg.MBBS,MD)</label>
+            </div>
+        </div>
+    <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">today</i>
+                <input id="daob" type="date" class="datepicker" required>
+                <label for="daob">Date of Birth</label>
+            </div>
+        <div class="input-field col s6">
+            <i class="material-icons prefix">email</i>
+            <input id="emailId" type="email" class="validate" required>
+            <label for="emailId">E-Mail</label>
+        </div>
+    </div>
+    <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">work</i>
+                <select id="timein">
+                    <option value="" disabled selected required>Time In</option>
+                    <option value="">00</option>
+                    <option value="">01</option>
+                    <option value="">02</option>
+                    <option value="">03</option>
+                    <option value="">04</option>
+                    <option value="">05</option>
+                    <option value="">06</option>
+                    <option value="">07</option>
+                    <option value="">08</option>
+                    <option value="">09</option>
+                    <option value="">10</option>
+                    <option value="">11</option>
+                    <option value="">12</option>
+                    <option value="">13</option>
+                    <option value="">14</option>
+                    <option value="">15</option>
+                    <option value="">16</option>
+                    <option value="">17</option>
+                    <option value="">18</option>
+                    <option value="">19</option>
+                    <option value="">20</option>
+                    <option value="">21</option>
+                    <option value="">22</option>
+                    <option value="">23</option>
+                    <option value="">24</option>
+                </select>
+                <label for="timein">Time In</label>
+            </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">work</i>
+                    <select id="timeouts">
+                        <option value="" disabled selected required>Time Out</option>
+                        <option value="">00</option>
+                        <option value="">01</option>
+                        <option value="">02</option>
+                        <option value="">03</option>
+                        <option value="">04</option>
+                        <option value="">05</option>
+                        <option value="">06</option>
+                        <option value="">07</option>
+                        <option value="">08</option>
+                        <option value="">09</option>
+                        <option value="">10</option>
+                        <option value="">11</option>
+                        <option value="">12</option>
+                        <option value="">13</option>
+                        <option value="">14</option>
+                        <option value="">15</option>
+                        <option value="">16</option>
+                        <option value="">17</option>
+                        <option value="">18</option>
+                        <option value="">19</option>
+                        <option value="">20</option>
+                        <option value="">21</option>
+                        <option value="">22</option>
+                        <option value="">23</option>
+                        <option value="">24</option>
+                    </select>
+
+
+                <label for="timeouts">Time out</label>
+            </div>
+            </div>
+
+        <div class="row">
+
+            <div class="input-field col s6">
+                <i class="material-icons prefix">phone</i>
+                <input id="phoneNumber" type="tel" class="validate" required>
+                <label for="phoneNumber">Telephone</label>
+            </div>
+        </div>
+        <div class="button">
+            <button class="btn waves-effect waves-light" type ="submit" name="action" onclick="addoc();">Submit
+            </button>
+        </div>
+    </div>
+</div>
+
+    <div id="test2" class="col s12">
+        <table id = "viewdoc">
+        <thead>
+        <tr>
+            <th data-field="name">Name</th>
+            <th data-field="sp">Specialty</th>
+            <th data-field="rem">Remove</th>
+        </tr>
+        </table>
+        <div class="red white-text center-align" style="padding:10px ; margin-bottom:5px;" id="deleted"><h5>Doctor Removed</h5></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+<!---
+
+<div class="card">
+
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab col s3"><a href="#test1" class="active" >Add Doctor</a></li>
+                    <li class="tab col s3"><a href="#test2" >View/Remove Doctor</a></li>
+                </ul>
+            </div>
+
+            <div id="test1" class="col s12">
+                <div class="container">
+                <div class="card">
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="name" type="text" class="validate" required>
+                            <label for="name">Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s3">
+                            <br>
+                            <select id="gender">
+                                <option value="" disabled selected required>Choose your option</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                            <label for="gender">Gender</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">work</i>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <br>
+                                    <select id="speciality">
+                                        <option value="" disabled selected required>Choose your option</option>
+                                        <option value="Bariatic Surgery">Bariatic Surgery</option>
+                                        <option value="IVF">IVF</option>
+                                        <option value="Nephrology">Nephrology</option>
+                                        <option value="Gynecology">Gynecology</option>
+                                        <option value="Oncology">Oncology</option>
+                                        <option value="Ophthamology">Ophthamology</option>
+
+
+                                    </select>
+                                </div>
+                            </div>
+                            <label for="speciality">Speciality</label>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">description</i>
+                            <input id="degree" type="text" class="validate" required>
+                            <label for="degree">Qualifications (eg.MBBS,MD)</label>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">today</i>
+                            <br>
+                            <input id="daob" type="date" class="datepicker" required>
+                            <label for="daob">Date of Birth</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">work</i>
+                            <select id="timein">
+                                <option value="" disabled selected required>Time In</option>
+                                <option value="">00</option>
+                                <option value="">01</option>
+                                <option value="">02</option>
+                                <option value="">03</option>
+                                <option value="">04</option>
+                                <option value="">05</option>
+                                <option value="">06</option>
+                                <option value="">07</option>
+                                <option value="">08</option>
+                                <option value="">09</option>
+                                <option value="">10</option>
+                                <option value="">11</option>
+                                <option value="">12</option>
+                                <option value="">13</option>
+                                <option value="">14</option>
+                                <option value="">15</option>
+                                <option value="">16</option>
+                                <option value="">17</option>
+                                <option value="">18</option>
+                                <option value="">19</option>
+                                <option value="">20</option>
+                                <option value="">21</option>
+                                <option value="">22</option>
+                                <option value="">23</option>
+                                <option value="">24</option>
+                            </select>
+
+                            <label for="timein">Time In</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">work</i>
+                            <div class="row">
+
+                                <select id="timeouts">
+                                    <option value="" disabled selected required>Time Out</option>
+                                    <option value="">00</option>
+                                    <option value="">01</option>
+                                    <option value="">02</option>
+                                    <option value="">03</option>
+                                    <option value="">04</option>
+                                    <option value="">05</option>
+                                    <option value="">06</option>
+                                    <option value="">07</option>
+                                    <option value="">08</option>
+                                    <option value="">09</option>
+                                    <option value="">10</option>
+                                    <option value="">11</option>
+                                    <option value="">12</option>
+                                    <option value="">13</option>
+                                    <option value="">14</option>
+                                    <option value="">15</option>
+                                    <option value="">16</option>
+                                    <option value="">17</option>
+                                    <option value="">18</option>
+                                    <option value="">19</option>
+                                    <option value="">20</option>
+                                    <option value="">21</option>
+                                    <option value="">22</option>
+                                    <option value="">23</option>
+                                    <option value="">24</option>
+                                </select>
+
+                            </div>
+                            <label for="timeouts">Time out</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">email</i>
+                            <input id="emailId" type="email" class="validate" required>
+                            <label for="emailId">E-Mail</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">phone</i>
+                            <input id="phoneNumber" type="tel" class="validate" required>
+                            <label for="phoneNumber">Telephone</label>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+
+                    </div>
+                    <div class="row">
+
+                    </div>
+
+
+                    <div class="button">
+                        <button class="btn waves-effect waves-light" type ="submit" name="action" onclick="addoc();">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                    <div class="red white-text center-align" style="padding:10px ; margin-bottom:5px;" id="added"><h5>Doctor Added</h5></div>
+                        </div>
+                </div>
+</div>
+<div id="test2" class="col s12"><table id = "viewdoc">
+    <thead>
+    <tr>
+        <th data-field="name">Name</th>
+        <th data-field="sp">Specialty</th>
+        <th data-field="rem">Remove</th>
+    </tr>
+</table>
+    <script>
+        function con(i) {
+            var c= confirm("Confirm Deletion");
+            if(c==true)
+                remdoc(i);
+        }
+    </script>
+    <div class="red white-text center-align" style="padding:10px ; margin-bottom:5px;" id="deleted"><h5>Doctor Removed</h5></div>
+</div>
+        </div>
+
+</div>
+
+-->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>Confirm Removal </h4>
+        <p>Doctor Will be Permanently Removed</p>
+    </div>
+    <div class="modal-footer">
+        <a id="agree" class="  modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+</div>
+
+<footer class="page-footer light-blue darken-3">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">WHO WE ARE</h5>
+                <div class="divider"></div>
+                <p class="grey-text text-lighten-4">Hospital, founded in honour of the legend, Padma Bhushan Dr Harshul Jadhav, came into existence in February 2004. The challenge of the early days was enormous, to foster the fledgling hospital into an enduring symbol of healthcare in the country. We recognised early on that to make a real and substantial contribution one had to redefine the standards themselves- instead of doing more of the same.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <div class="divider"></div>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Facilities</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">News</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Media</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            &copy; 2016 SPIT
+            <a class="grey-text text-lighten-4 right" href="#!">Terms And Conditions</a>
+        </div>
+    </div>
+</footer>
+<script src="http://cdn.pubnub.com/pubnub-3.16.4.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <!--Import Google Icon Font-->
+   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <!--Import materialize.css-->
+   <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+   <TITLE>Hospital | Home</TITLE>
+   <!--Let browser know website is optimized for mobile-->
+   <meta name="viewport" content="width=device-width, initial-scale=6.0" />
+</head>
+<style>
+</style>
+
+<body background="img/background.png">
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<!-- Navabar -->
+<!-- Dropdown Structure -->
+
+<nav class=" teal lighten-1" >
+   <div class="nav-wrapper    transparent">
+      <a href="index.html" class="brand-logo hide-on-med-and-down" style="margin-left:20px;"><img class="todo-shrink-navlogo" src="img/legacy-hospital-logo.jpg"></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+         <li class="active"><a href="index.html">Home</a></li>
+         <li><a href="facilities.html">Facilities</a></li>
+         <li><a href="gallery.html">Gallery</a></li>
+         <li><a href="ns.html">Newsletters</a></li>
+         <li><a href="contactus.html">Contact Us</a></li>
+         <li><a class="waves-effect waves-light btn  amber accent-4" href="login.html">Patient Login</a></li>
+      </ul>
+      <ul class="side-nav  teal lighten-1 white-text" id="mobile-demo" style="color:#fff;">
+         <a href="index.html" class="brand-logo " style="margin-left:20px;"><img class="todo-shrink-navlogo" src="img/legacy-hospital-logo.jpg"></a>
+         <li class="active" style="margin-top: 140px;" "><a href="index.html" style="color:#fff;">Home</a></li>
+         <li><a href="facilties.html" style="color:#fff;">Facilities</a></li>
+         <li><a href="gallery.html" style="color:#fff;">Gallery</a></li>
+         <li><a href="ns.html" style="color:#fff;">Newsletters</a></li>
+         <li><a href="contactus.html" style="color:#fff;">Contact Us</a></li>
+         <li><a class="waves-effect waves-light btn  amber accent-4" href="login.html">Patient Login</a></li>
+      </ul>
+   </div>
+</nav>
+<div class="container" style="margin-top:20px;">
+<div class="slider " style="margin-top: 10px;">
+   <ul class="slides">
+      <li>
+         <img class="responsive-img" src="img/hoshome1.jpg"  style="opacity:0.3;">
+         <!-- random image -->
+         <div class="caption center-align">
+            <h3>Biggest Hospital</h3>
+            <h5 class="light grey-text text-lighten-3">Our Hospital is the only hospital in the city that has more that 240 beds</h5>
+         </div>
+      </li>
+      <li>
+         <img class="responsive-img" src="img/hoshome2.jpg" style="opacity:0.3;">
+         <!-- random image -->
+         <div class="caption left-align">
+            <h3>Trained Staff</h3>
+            <h5 class="light grey-text text-lighten-3">Best staff in the entire country.</h5>
+         </div>
+      </li>
+      <li>
+         <img class="responsive-img" src="img/hoshome3.jpg" style="opacity:0.3;">
+         <!-- random image -->
+         <div class="caption right-align">
+            <h3>Best Emergency Services</h3>
+            <h5 class="light grey-text text-lighten-3">Hospital provides the best emergency service in the entire city with 24/7 online emergency ambulance booking.</h5>
+         </div>
+      </li>
+   </ul>
+</div>
+
+   <div class="card ">
+      <div class="card-content ">
+         <div class="row">
+            <div class="col s12">
+               <ul class="tabs ">
+                  <li class="tab col s3"><a class="active" href="#test1">Search For Doctor</a></li>
+                  <li class="tab col s3"><a href="#test2">Book An Appointment</a></li>
+               </ul>
+            </div>
+            <div id="test1" class="col s12">
+               <br>
+               <form class="col s12">
+                  <div class="row">
+                     <div class="input-field col m6 s12">
+                        <select id="speciality2" onchange="onchangesp2()">
+                           <option value="" disabled selected>Choose your option</option>
+                           <option value="Bariatic Surgery">Bariatic Surgery</option>
+                           <option value="IVF">IVF</option>
+                           <option value="Nephrology">Nephrology</option>
+                           <option value="Gynecology">Gynecology</option>
+                           <option value="Oncology">Oncology</option>
+                           <option value="Ophthamology">Ophthamology</option>
+                        </select>
+                        <label>Speciality</label>
+                     </div>
+                     <div class="input-field col m6 s12">
+                        <select id="doctorslist2" onchange="onchangedoc2()">
+                           <option value="" disabled selected>Select Doctor</option>
+                        </select>
+                        <label>Doctors</label>
+                     </div>
+                     <div>
+                        <a class="waves-effect waves-light btn center-align orange darken-2" onclick="togdoct()">Search</a>
+                     </div>
+                     <div id="docttabc">
+                        <span class="card-title">Doctor Results</span>
+                        <table id="docttab">
+                           <tr>
+                              <th data-field="id">Name</th>
+                              <th data-field="price">Speciality</th>
+                              <th data-field="price">Oualifications</th>
+                              <th data-field="price">Time In</th>
+                              <th data-field="price">Time Out</th>
+                              <th data-field="price">Email</th>
+                           </tr>
+                        </table>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+         <div id="test2" class="col s12">
+            <br>
+            <div class="red white-text center-align" style="padding:10px; margin-bottom:5px;" id="erroapp">
+               <h5>Sorry Time Slot Already Booked Please Select Another Time</h5></div>
+            <div class="green white-text center-align" style="padding:10px ; margin-bottom:5px;" id="doneapp">
+               <h5>Appointment Booked</h5></div>
+            <div class="row">
+               <div class="input-field col m4 s12">
+                  <input id="name" type="text" class="validate">
+                  <label for="name">Name</label>
+               </div>
+               <div class="input-field col m1 s12">
+                  <input id="age" type="text" class="validate">
+                  <label for="age">Age</label>
+               </div>
+               <div class="input-field col m2 s12">
+                  <input id="contact" type="text" class="validate">
+                  <label for="contact">Contact</label>
+               </div>
+               <div class="input-field col m1 s12">
+                  <select id="gender">
+                     <option value="" disabled selected>Gender</option>
+                     <option value="1">Male</option>
+                     <option value="2">Female</option>
+                  </select>
+                  <label>Gender</label>
+               </div>
+               <div class="input-field col m4 s12">
+                  <input id="email" type="text" class="validate">
+                  <label for="email">Email</label>
+               </div>
+            </div>
+            <div class="row">
+               <div class="input-field col m2 s12">
+                  <input id="country" type="text" class="validate">
+                  <label for="country">Country</label>
+               </div>
+               <div class="input-field col m2 s12">
+                  <input type="date" id="date" class="datepicker" placeholder="Date">
+               </div>
+
+               <div class="input-field col m3 s12">
+                  <select id="speciality1" onchange="onchangesp1()">
+                     <option value="" disabled selected>Choose your option</option>
+                     <option value="Bariatic Surgery">Bariatic Surgery</option>
+                     <option value="IVF">IVF</option>
+                     <option value="Nephrology">Nephrology</option>
+                     <option value="Gynecology">Gynecology</option>
+                     <option value="Oncology">Oncology</option>
+                     <option value="Ophthamology">Ophthamology</option>
+                  </select>
+                  <label>Speciality</label>
+               </div>
+               <div class="input-field col m3 s12">
+                  <select id="doctorslist1" onchange="onchangedoctors()">
+                     <option value="0" disabled selected>Select Doctor</option>
+                  </select>
+                  <label>Doctors</label>
+               </div>
+               <div class="input-field col m1 s12">
+                  <select id="hours">
+                     <option value="" disabled selected>Hours</option>
+                  </select>
+                  <label>Hours</label>
+               </div>
+               <div class="input-field col m1 s12">
+                  <select id="mins">
+                     <option value="" disabled selected>Mins</option>
+                     <option value="00">00</option>
+                     <option value="10">10</option>
+                     <option value="20">20</option>
+                     <option value="30">30</option>
+                     <option value="40">40</option>
+                     <option value="50">50</option>
+                     <option value="60">60</option>
+                  </select>
+                  <label>Mins</label>
+               </div>
+               <div>
+                  <button class="waves-effect waves-light btn center-align orange darken-2" onclick="createAppointment()">Book</button>
+               </div>
+            </div>
+
+         </div>
+
+      </div>
+   </div>
+   <div class="card-panel center-align">
+      <div class="card-title">
+         <h4>CENTER OF EXCELLENCE</h4>
+      </div>
+      <div class="divider"></div>
+      <br>
+      <div class="row">
+         <div class="col s6 m2">
+            <img src="img/Bariatric-surgery.png">
+            <br> BARIATIC SURGERY
+         </div>
+         <div class="col s6 m2">
+            <img src="img/IVF.png">
+            <br> IVF
+         </div>
+         <div class="col s6 m2">
+            <img src="img/Nephrology.png">
+            <br> NEPHROLOGY
+         </div>
+         <div class="col s6 m2">
+            <img src="img/Obstetrics-and-gynecology.png">
+            <br> GYNECOLOGY
+         </div>
+         <div class="col s6 m2">
+            <img src="img/Oncology.png">
+            <br> ONCOLOGY
+         </div>
+         <div class="col s6 m2">
+            <img src="img/Ophthalmology.png">
+            <br> OPHTHALMOLOGY
+         </div>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col s12 m4">
+         <!-- Promo Content 1 goes here -->
+         <div class="card-panel center-align ">
+            <div class="center promo promo-example">
+                        <span style="font-size:25px;">
+                     <i class="material-icons">&#xE24E;</i>
+                     <p class="promo-caption">HAPPY PATIENTS</p>
+                     <p class="light center">10000+</p>
+                  </span>
+            </div>
+         </div>
+      </div>
+      <div class="col s12 m4">
+         <!-- Promo Content 2 goes here -->
+         <div class="card-panel center-align ">
+            <div class="center promo promo-example">
+                        <span style="font-size:25px;">
+                     <i class="material-icons">&#xE53A;</i>
+                     <p class="promo-caption">BEDS</p>
+                     <p class="light center">240+</p>
+                  </span>
+            </div>
+         </div>
+      </div>
+      <div class="col s12 m4">
+         <!-- Promo Content 3 goes here -->
+         <div class="card-panel ">
+            <div class="center promo promo-example">
+                        <span style="font-size:25px;">
+                     <i class="material-icons">&#xE7FB;</i>
+                     <p class="promo-caption">Professional</p>
+                     <p class="light center">1000+</p>
+                  </span>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="fixed-action-btn " style="bottom: 45px; right: 24px;">
+   <a class="btn-floating btn-large  red" href="ambulance.html">
+      <i class="material-icons">&#xE548;</i>
+   </a>
+</div>
+<footer class="page-footer  teal lighten-1">
+   <div class="container">
+      <div class="row">
+         <div class="col l6 s12">
+            <h5 class="white-text">WHO WE ARE</h5>
+            <div class="divider"></div>
+            <p class="grey-text text-lighten-4">Hospital, founded in honour of the legend, Padma Bhushan Dr Harshul Jadhav, came into existence in February 2004. The challenge of the early days was enormous, to foster the fledgling hospital into an enduring symbol of healthcare in the country. We recognised early on that to make a real and substantial contribution one had to redefine the standards themselves- instead of doing more of the same.</p>
+         </div>
+         <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <div class="divider"></div>
+            <ul>
+               <li><a class="grey-text text-lighten-3" href="Home.html">Home</a></li>
+               <li><a class="grey-text text-lighten-3" href="facilities.html">Facilities</a></li>
+               <li><a class="grey-text text-lighten-3" href="ns.html">News</a></li>
+               <li><a class="grey-text text-lighten-3" href="gallery.html">Gallery</a></li>
+               <li><a class="grey-text text-lighten-3" href="contactus.html">Contact Us</a></li>
+               <li><a class="grey-text text-lighten-3" href="Login.html">Login</a></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+   <div class="footer-copyright">
+      <div class="container">
+         &copy; 2016 SPIT
+         <a class="grey-text text-lighten-4 right" href="#!">Terms And Conditions</a>
+      </div>
+   </div>
+</footer>
+</body>
+<script>
+   $(document).ready(function() {
+      $('select').material_select();
+      $('.slider').slider({
+         full_width: true,
+         interval: 5000,
+         height: 300,
+         transition: 800
+      });
+      $('.datepicker').pickadate({
+         selectMonths: true, // Creates a dropdown to control month
+         selectYears: 100, // Creates a dropdown of 15 years to control year
+         format:'dd/mm/yyyy'
+      });
+
+   });
+   $('#patients_voice').carousel({
+      full_width: true,
+      indicators: true
+   });
+</script>
+
+</html>
